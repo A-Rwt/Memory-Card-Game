@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Emilys+Candy&display=swap');
+
+*{
+ box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height:100vh; /* Full viewport height */ 
+    width: 100vw;
+    overflow: hidden;
+}
+.display-container{
+    position: absolute; 
+    height:100vh; /* Full viewport height */ 
+    width: 100vw;
+   /* Prevent scroll bars */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+video>#myvideo{
+    overflow: hidden;
+    position: absolute;
+    height: 100vh; 
+   width: 100vw;
+    z-index: -1; /* Send video behind content */ 
+
+ 
+   
+}
+
+.background{
+    position: absolute;
+    height: 100vh; 
+   width: 100vw;
+    z-index: -1; /* Send video behind content */ 
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,242,224,1) 35%, rgba(255,205,96,1) 100%);
+}
+img{
+    position: absolute;
+    height: 100%; 
+   width: 100%;
+   overflow: hidden;
+ object-fit: cover;
+    z-index: -1;
+}
+
+  .overlay{ 
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    position: absolute; 
+    z-index: 1; /* Bring content above the video */ 
+   justify-content: center;
+   background-color: rgba(245, 222, 179, 0.141);
+  backdrop-filter: blur(7px);
+    
+    }
+  
+
+    .overlay-text{
+         display: none;
+        position: fixed ;
+        top:0 ;
+        left: 0;
+        right: 0;
+        bottom: 0;
+       
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        color:#6f2919;
+        font-family:'Emilys Candy';
+
+    }
+
+    .overlay-text.visible{
+        display: flex;
+        flex-direction: column;
+        animation: overlay-grow 500ms forwards;
+    }
+
+    @keyframes overlay-grow{
+        from{
+            background-color: rgba(250, 235, 215, 0.644);
+            font-size: 0;
+        }to{
+            background-color:rgba(250, 235, 215, 0.644)  ;
+            font-size: 8em;
+        }
+    }
+
+    .overlay-text-small{
+        font-size :.3em;
+    }
+    h1.title{
+       text-align: center;
+        margin: 0;
+        font-family: 'Emilys Candy' ;
+        font-size: 3rem;
+        color:#a04832;
+        
+       
+    }
+    .game-container{
+        margin:0 200px;
+        perspective: 500px;
+       
+    }
+    .game-info-c{
+     display: flex;
+    justify-content: space-between;
+    grid-column: 1/-1;
+    position: relative;
+    z-index: 1;
+    
+        
+    }
+    .game-info{
+        font-family: 'Delius';
+        font-weight: 200;
+        font-size: 1.5rem;
+        color: #c54002 ;
+       /* background-color:#6C72DB;*/
+      /* background-color:rgb(248, 170, 170); */
+      background-color: #ffffff;
+        box-shadow: 0px 4px 8px 5px #6f2919;
+        padding:8px 15px;
+        border-radius: 10px;
+        border: 1px solid #6f2919;
+    }
+
+  /*      .cards{
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+        }*/
+      
+
+        .cards{
+            
+          background-color: #f4f4f95b ;
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            grid-gap:5px;
+            padding: 20px 0;
+            align-items: center;
+            justify-content:center;
+            justify-self: center;
+            width: 550px;
+            height: 100%;
+           transform: translateY(-30px);
+          border: 5px solid rgba(255, 248, 248, 0.401);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            
+           
+        }
+        
+    .card{
+        position: relative;
+        height: 150px;
+        width: 110px;
+      
+          
+    }
+
+    .card-face{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+         justify-content: center;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      backface-visibility: hidden;
+      transition: transform 600ms ease-in-out;
+     
+    }
+    .card-face>h1{
+        color: white;
+    }
+   
+    .card.visible .card-back{
+        transform: rotateY(-180deg);
+    }
+.card.visible .card-front{
+    transform: rotateY(0);
+}
+
+    .card-front{
+        transform: rotateY(180deg);
+         width: 100%;
+        background-size: contain;
+        align-items: center;
+        display: flex;
+        position: absolute;
+        background-color: #D0E5BE;
+        border:2px solid #161616;
+       /* border:5px solid #D4BEE5;*/
+        border-radius: 10px;
+    }
+    
+.card-value {
+    object-fit:contain;
+ 
+    }
+
+    .card-back{
+        align-items: center;
+        /*background-color: #D0E5BE;*/
+        /*background: rgb(208,229,190);*/
+       /* background: rgb(255, 221, 0);*/
+       background-color: #ffdf6c;
+     
+        height: 150px;
+        width: 110px;
+        border:2px solid #161616;
+         
+      border-radius: 10px;
+    }
+  
+  /*.bg{
+        position: absolute;
+        z-index: 1;
+        height: 200px;
+        width: 100px;
+        transition: transform 100ms ease-in-out;
+    }*/
+
+    
+    .card-back>h1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        position:absolute;
+        height: 60px;
+        width: 60px;
+        color:rgb(100, 40, 23);
+        border-radius: 50%;
+        background-color:rgba(235, 194, 194, 0.623);
+        /*background-color: #d4bee582;*/
+        z-index: 1;
+        animation:dance 1s linear infinite 200ms;
+         transition: transform 0.5s ease-in-outcubic-bezier(0.77, 0.05, 0.17, 1);
+         
+
+    }
+.card-back:hover h1{
+        transform: scale(1.1) rotate(0);
+        animation: none;
+    }
+  
+
+@keyframes dance{
+    0%,100%{
+        transform:  rotate(0);
+    }
+    25%{
+        transform:  rotate(-30deg);
+    }
+    75%{
+        transform:   rotate(30deg);
+    }
+}
+
+
+    .cat{
+        top:70%;
+        left: 70%;
+        height:300px;
+        width:300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          position:absolute;
+        z-index: 1;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    @media(max-width:700px){
+        .game-container{
+            margin: 0 80px;
+        }
+      
+    }
+    @media(max-width:600px){
+        .cards{
+            grid-template-columns: repeat(2,auto);
+
+        }
+      
+        .overlay{
+            overflow: scroll;
+        }
+       
+        .cards{
+            
+            
+              width: 300px;
+             
+             
+        }
+    }
+ 

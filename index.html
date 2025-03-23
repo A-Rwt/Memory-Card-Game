@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game-Flip-and-Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" async>    </script>
+</head>
+<body>
+<div class="display-container">
+   <!-- <div class="background"></div>-->
+<video autoplay muted loop id="myVideo">
+        <source src="images/original-5e28700400d9ec22fa64e8717e791f2d.mp4" type="video/mp4">
+      </video>
+    <!-- <img src="cartoon-background-simple-stage-free-video.jpg" alt="">
+      -->
+    <div class="overlay">
+      <h1 class="title">Flip And Match </h1>
+      <div class="overlay-text visible">
+        Click To Start
+        
+      </div>
+      <div id="game-over" class="overlay-text ">
+      GAME OVER
+      <span class="overlay-text-small">
+            Click to restart
+        </span>
+      </div>
+      <div id="win" class="overlay-text ">
+        VICTORY
+        <span class="overlay-text-small">
+              Click to restart
+          </span>
+        </div>
+      <div class="game-container">
+        <div class="game-info-c">
+            <div class="game-info">
+               Time: <span id="time">00</span>
+            </div>
+            <div class="game-info">
+                Flips: <span id="Flips">00</span>
+            </div>
+        </div>
+      
+         <!--cards-->
+        <div class="cards ">
+
+             <div class="card">
+                 <div class="card-back card-face">
+                  
+                    <div class="bg">
+                       <!--<img src="1245w-SyR6W_p_r5M.webp" alt="image card">--> 
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/alligator.png" alt="aligator card">
+                 </div>
+             </div>
+         
+             <div class="card">
+                 <div class="card-back card-face">
+                     
+                    <div class="bg">
+                       
+                     
+                    </div> <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/alligator.png" alt="aligator card">
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-back card-face">
+                    <div class="bg">
+                        <!--<img src="1245w-SyR6W_p_r5M.webp" alt="image card">-->
+                     
+                    </div> 
+                     <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/elephant.png" alt="aligator card">
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-back card-face">
+                     
+                    <div class="bg">
+                        
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/elephant.png" alt="elephant card">
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-back card-face">
+                     
+                    <div class="bg">
+                      
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/fish.png" alt="fish card">
+                 </div>
+             </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                     
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/fish.png" alt="fish card">
+                 </div>
+             </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div>  <h1>?</h1>
+
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/goat.png" alt="goat card">
+                 </div>
+             </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                     <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/goat.png" alt="goat card">
+                 </div>
+             </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                     <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/hippo.png" alt="hippo card">
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                     <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/hippo.png" alt="hippo card">
+                 </div>
+             </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                     
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                 <div class="card-front card-face">
+                     <img  class="card-value" src="./images/jelllyfish.png" alt="jellyfish card">
+                 </div>
+            </div>
+             <div class="card ">
+                 <div class="card-back card-face">
+                    
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                    <h1>?</h1>
+                 </div>
+                <div class="card-front card-face">
+                     <img  class="card-value" src="./images/jelllyfish.png" alt="jellyfish card">
+             </div>
+             </div>
+            <div class="card ">
+                <div class="card-back card-face">
+                  
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                      <h1>?</h1>
+                </div>
+                <div class="card-front card-face">
+                    <img  class="card-value" src="./images/lion.png" alt=" lion card">
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div>
+                     <h1>?</h1>
+
+                </div>
+                <div class="card-front card-face">
+                    <img  class="card-value" src="./images/lion.png" alt="lion card">
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div> 
+                     <h1>?</h1>
+                </div>
+                <div class="card-front card-face">
+                    <img  class="card-value" src="./images/monkey.png" alt="monkey card">
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-back card-face">
+                    <div class="bg">
+                       
+                     
+                    </div>  <h1>?</h1>
+
+                </div>
+                <div class="card-front card-face">
+                    <img  class="card-value" src=".images/monkey.png" alt="monkey card">
+                </div>
+            </div>
+    
+        </div>
+         <!--cards end-->
+      </div>
+
+      
+      
+    </div>
+    <!--img cat-->
+     <!-- <div class="cat">
+       
+        <img alt="Animated GIF" src="original-03e94dc91374ad8ee0e676b508fd9bd5.gif" />
+      </div>-->
+</div>
+</body>
+</html>
