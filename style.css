@@ -76,6 +76,7 @@ img{
         z-index: 100;
         color:#6f2919;
         font-family:'Emilys Candy';
+        text-align:center;
 
     }
 
@@ -306,5 +307,6 @@ img{
              
              
         }
+        
     }
  
