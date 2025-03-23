@@ -70,13 +70,13 @@ img{
         left: 0;
         right: 0;
         bottom: 0;
-       
+         text-align:center;
         justify-content: center;
         align-items: center;
         z-index: 100;
         color:#6f2919;
         font-family:'Emilys Candy';
-        text-align:center;
+      
 
         
     }
