@@ -52,7 +52,7 @@ img{
   .overlay{ 
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0;
     position: absolute; 
     z-index: 1; /* Bring content above the video */ 
@@ -85,6 +85,7 @@ img{
         display: flex;
         flex-direction: column;
         animation: overlay-grow 500ms forwards;
+        height: 100vh;
     }
 
     @keyframes overlay-grow{
@@ -271,19 +272,7 @@ img{
 }
 
 
-    .cat{
-        top:70%;
-        left: 70%;
-        height:300px;
-        width:300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-          position:absolute;
-        z-index: 1;
-        border-radius: 50%;
-        overflow: hidden;
-    }
+
 
     @media(max-width:700px){
         .game-container{
@@ -295,6 +284,13 @@ img{
         .cards{
             grid-template-columns: repeat(2,auto);
 
+        }
+        .overlay-text.visible {
+             overflow: hidden;
+            height: 100%;
+          
+        
+           
         }
       
         .overlay{
@@ -310,4 +306,6 @@ img{
         }
         
     }
- 
+    @media(max-width:400px){
+
+    }
