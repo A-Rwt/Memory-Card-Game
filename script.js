@@ -207,7 +207,7 @@ window.onload = function() {
 // Function to display the centered message in the middle of the screen for a few seconds
 function showCenteredMessage(message) {
     const messageElement = document.getElementById('centeredMessage');
-    messageElement.innerText = message;  t
+    messageElement.innerText = message; 
     messageElement.style.display = 'block'; 
 
     setTimeout(() => {
