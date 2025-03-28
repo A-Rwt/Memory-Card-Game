@@ -10,6 +10,76 @@ body{
     width: 100vw;
     overflow: hidden;
 }
+
+
+
+ /* Centered message styling */
+ #centeredMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 25px;
+    z-index: 1100; /* Ensure it's above other content */
+    display: none; /* Initially hidden */
+      font-family:'Emilys Candy' ;
+}
+
+/* Overlay and modal styles */
+#overlay {
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: all; /* Block interaction */
+}
+
+#modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#modal input {
+    border-radius:10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#modal button {
+    border-radius:10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    background-color:rgb(46, 115, 49);
+}
+
+/* Disable scroll when overlay is active */
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+
+
+
 .display-container{
     position: absolute; 
     height:100vh; /* Full viewport height */ 
@@ -54,7 +124,7 @@ img{
     width: 100vw;
     height: 100%;
     top: 0;
-    position: absolute; 
+    position: fixed; 
     z-index: 1; /* Bring content above the video */ 
    justify-content: center;
    background-color: rgba(245, 222, 179, 0.141);
@@ -66,7 +136,7 @@ img{
     .overlay-text{
          display: none;
         position: fixed ;
-        top:0 ;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;

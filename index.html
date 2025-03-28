@@ -8,6 +8,23 @@
     <script src="script.js" async>    </script>
 </head>
 <body>
+
+    <h1 id="message"></h1>
+
+    <!-- Centered message element -->
+    <div id="centeredMessage"></div>
+
+    <!-- Overlay and Modal for entering name -->
+    <div id="overlay" style="display:none;">
+        <div id="modal">
+            <h2>What should we call you?</h2>
+            <input type="text" id="nameInput" placeholder="Enter your name" />
+            <br><br>
+            <button id="submitName">Submit</button>
+        </div>
+    </div>
+
+
 <div class="display-container">
    <!-- <div class="background"></div>-->
 <video autoplay muted loop id="myVideo">

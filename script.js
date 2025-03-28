@@ -1,3 +1,4 @@
+//audio assets
 class AudioController{
     constructor(){
         this.bgmusic =new Audio('audio/2-cherry-cute-bgm-271158.mp3');
@@ -69,7 +70,7 @@ class mixandmatch{
             card.classList.remove('matched');
         });
       }
-     
+     //updating flip counts
      flipCard(card){
             if(this.canFlipCard(card)){
                 this.audioController.flip();
@@ -86,7 +87,7 @@ class mixandmatch{
             }
          }
         
-    
+    //card match
     checkForCardMatch(card){
         if(this.getCardType(card) === this.getCardType(this.cardToCheck))
             //match
@@ -178,8 +179,7 @@ function ready(){
     {
         overlay.classList.remove('visible');
         game.startGame();
-       /* let audioController = new AudioController();
-audioController.startMusic();*/
+      
   });
   });
   cards.forEach(card =>{
@@ -190,6 +190,51 @@ audioController.startMusic();*/
 
 }
 
+
+
+window.onload = function() {
+    // Retrieve the name from localStorage
+    const userName = localStorage.getItem('userName');  
+
+    if (userName) {
+        showCenteredMessage(`Welcome back, ${userName}! ◝(ᵔᵕᵔ)◜✨`);
+    } else {
+    
+        showModal();
+    }
+};
+
+// Function to display the centered message in the middle of the screen for a few seconds
+function showCenteredMessage(message) {
+    const messageElement = document.getElementById('centeredMessage');
+    messageElement.innerText = message;  t
+    messageElement.style.display = 'block'; 
+
+    setTimeout(() => {
+        messageElement.style.display = 'none'; 
+    }, 3000);
+}
+
+// Show the modal for entering the name
+function showModal() {
+ 
+    document.getElementById('overlay').style.display = 'flex';
+    document.body.classList.add('no-scroll'); 
+
+    // Handle the form submission
+    document.getElementById('submitName').onclick = function() {
+        const enteredName = document.getElementById('nameInput').value;
+        if (enteredName) {
+          
+            localStorage.setItem('userName', enteredName);
+            document.getElementById('overlay').style.display = 'none';
+            document.body.classList.remove('no-scroll');
+            showCenteredMessage(`Welcome, ${enteredName}! (๑'ᵕ'๑)⸝*✨`);
+        } else {
+            alert('Please enter a name!');
+        }
+    };
+}
 
 if (document.readyState =='loading'){
     document.addEventListener('DOMContentLoaded',ready);
