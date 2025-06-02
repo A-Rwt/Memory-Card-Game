@@ -35,7 +35,7 @@ An interactive and fun memory card game where players flip cards to find matchin
 
 ## Screenshots
 
-![Screenshot](images\screenshots\image.png)
+![Screenshot](./images/screenshots/image.png)
 ![Screenshot2](images\screenshots\image1.png)
 
 
